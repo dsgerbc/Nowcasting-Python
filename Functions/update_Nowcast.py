@@ -85,7 +85,7 @@ def update_nowcast(X_old,X_new,Time,Spec,Res,series,period,vintage_old,vintage_n
     print("\n Nowcast Update: {}".format(dt.fromordinal(vintage_new-366).isoformat().split('T')[0]))
     print("\n Nowcast for: {} ({}), {}".format(Spec.SeriesName[i_series][0],
                                                Spec.UnitsTransformed[i_series][0],
-                                               pd.to_datetime(dt.fromordinal(Time[t_nowcast]-366)).to_period('Q')))
+                                               pd.to_datetime(dt.fromordinal(Time[t_nowcast][0]-366)).to_period('Q')))
 
     # Only display table output if a forecast is made
     if forecast.shape[0] == 0:

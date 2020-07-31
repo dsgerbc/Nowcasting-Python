@@ -62,9 +62,10 @@ def readData(datafile):
 
     # readData Read data from Microsoft Excel workbook file
 
-    dat  = pd.read_excel(datafile)
+    dat  = pd.read_excel(datafile,parse_dates=True)
     Mnem = np.array([i for i in list(dat.columns) if i != "Date"])
     Z    = dat[Mnem].to_numpy(copy=True)
+    dat.Date=pd.to_datetime(dat.Date)
     Time = dat.Date.apply(lambda x: x.toordinal()+366).to_numpy(copy= True)
 
     return Z,Time,Mnem
