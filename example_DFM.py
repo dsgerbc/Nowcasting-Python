@@ -17,14 +17,14 @@ pd.set_option('display.expand_frame_repr', False)
 
 
 #-------------------------------------------------User Inputs
-vintage      = '2016-06-29'                                                   # vintage dataset to use for estimation
+vintage      = '2020-06-30'                                                   # vintage dataset to use for estimation
 country      = 'US'                                                           # United States macroeconomic data
 sample_start = dt.strptime("2000-01-01", '%Y-%m-%d').date().toordinal() + 366 # estimation sample
 
 
 #-------------------------------------------------Load model specification and dataset.
 # Load model specification structure `Spec`
-Spec = load_spec('Spec_US_example.xls')
+Spec = load_spec('Spec_US_test.xls')
 
 # Parse `Spec`
 SeriesID         = Spec.SeriesID
